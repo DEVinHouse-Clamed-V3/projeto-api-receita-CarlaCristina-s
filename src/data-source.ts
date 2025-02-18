@@ -1,3 +1,4 @@
+require('dotenv').config()
 import "reflect-metadata"
 import { DataSource } from "typeorm"
 
@@ -11,6 +12,6 @@ export const AppDataSource = new DataSource({
     synchronize: false,
     logging: process.env.NODE_ENV === 'development' ? true : false ,
     entities: ["src/entity/*.ts"],
-    migrations: ["src/migration/*.ts"],
+    migrations: ["src/database/migrations/*.ts"],
     subscribers: [],
 })
